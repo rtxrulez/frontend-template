@@ -8,19 +8,19 @@ body {
 body {
     position: relative; 
     overflow: hidden;
+    min-width: 320px;
+    background-color: green ;
     color: $text-color;
     font-size: $body-size;
     font-family: $font-base;
-    min-width: 320px;
-    background-color: green ;
 }
 
 .player_window {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     z-index: 2;
     overflow: auto;
 } 
@@ -40,6 +40,7 @@ ol {
 
 a {
     color: $gray-default;
+
     &:hover,
     &:focus {
         color: lighter($gray-default, 10);
@@ -47,53 +48,53 @@ a {
 }
 
 .img-responsive {
-    max-width: 100%;
     display: block;
+    max-width: 100%;
 }
 
 .main {
     position: absolute;
     top: 0;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     height: 100%;
     background: url('../images/bg.JPG') no-repeat center / cover;
 
     &.bgblack {
         &:after {
-            content: ' ';
             position: absolute;
             top: 0;
+            right: 0;
             bottom: 0;
             left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.5);
             z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5);
+            content: ' ';
         }
     }
 }
 
 .player_content {
     position: relative;
-    width: 90%;
-    max-width: 960px;
     margin: 5% auto 5% auto;
+    max-width: 960px;
+    width: 90%;
     background: #000;
 }
 
 .video_block {
-    display: flex;
     position: relative;
+    display: flex;
+    justify-content: space-between;
     max-height: 405px;
     height: 100%;
-    justify-content: space-between;
 }
 
 .infoblock {
     position: relative;
-    background: #fff;
     display: flex;
+    background: #fff;
 }
 
 .video_container,
@@ -110,50 +111,51 @@ a {
 
 .video_list,
 .inforight {
-    width: 35%;
     position: relative;
-    max-width: 233px;   
+    max-width: 233px;
+    width: 35%;   
 }
 
 .infoleft {
-    border-right: 1px solid #e7e8ec;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-right: 1px solid #e7e8ec;
 }
 
 .video_head_one {
-    padding: 8px 0 7px;
-    white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    padding: 8px 0 7px;
     color: #fff;
-    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-weight: 700;
+    font-size: 12px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .playlist {
     position: absolute;
-    margin-top: 30px;
     top: 0;
+    right: 0;
     bottom: -1px;
     left: 0;
-    right: 0;
     overflow-y: auto;
+    margin-top: 30px;
 }
 
 .videoplay {
     display: flex;
-    padding: 02.57% 02.14% 02.57% 04.29%;
-    cursor: pointer;
-    background-color: #1e1e1e;
-    margin-right: 03%;
-    white-space: nowrap;
     overflow: hidden;
+    margin-right: 03%;
+    padding: 02.57% 02.14% 02.57% 04.29%;
+    background-color: #1e1e1e;
+    white-space: nowrap;
+    cursor: pointer;
     -o-transition: background-color 100ms linear;
     transition: background-color 100ms linear;
+
     &:hover,
     &:focus,
     &.active {
@@ -164,38 +166,39 @@ a {
         position: relative;
         width: 42.33%;
         height: 55px;
-        background-color: #222;
-        background-size: cover;
-        background-position: 50%;
         border-radius: 2px;
+        background-color: #222;
+        background-position: 50%;
+        background-size: cover;
     }
     &_content {
+        margin-left: 3.65%;
         width: 44.63%;
         vertical-align: top;
-        margin-left: 3.65%;
         white-space: normal;
     }
     &_title {
-        max-height: 34px;
-        margin-bottom: 2px;
         display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
         overflow: hidden;
+        margin-bottom: 2px;
+        max-height: 34px;
+        color: #fff;
         text-overflow: ellipsis;
         font-size: 12px;
         line-height: 17px;
-        color: #fff;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
         //opacity: 0.7;
     }
     &_views {
+        overflow: hidden;
+        color: #fff;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         font-size: 11px;
         line-height: 15px;
-        color: #fff;
         opacity: 0.35;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
     }
     &_duration {
         position: absolute;
@@ -220,9 +223,9 @@ a {
 .inforight_title {
     padding-bottom: 4px;
     padding-left: 3.3%;
+    color: #2b2f33;
     font-size: 16px;
     line-height: 23px;
-    color: #2b2f33;
 }
 
 .infohead {
@@ -233,33 +236,33 @@ a {
 }
 
 .infovideoname {
+    display: -webkit-box;
+    overflow: hidden;
+    max-height: 46px;
+    color: #000;
+    text-overflow: ellipsis;
     font-size: 17px;
     line-height: 23px;
-    max-height: 46px;
-    display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #000;
 }
 
 .infovideoviews {
     float: right;
     margin-left: 20px;
-    font-size: 14px;
-    line-height: 23px;
     min-height: 23px;
-    white-space: nowrap;
     color: #939393;
     text-align: right;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 23px;
 }
 
 .inforight_playlist {
     .videoplay {
+        padding: 02.57% 02.14% 02.57% 04.29%;
         background-color: #fff;
         text-decoration: none;
-        padding: 02.57% 02.14% 02.57% 04.29%;
     }
     .videoplay_title {
         color: #2a5885;
@@ -267,22 +270,23 @@ a {
         cursor: pointer;
     }
     .videoplay_views {
+        overflow: hidden;
         padding-top: 3px;
         color: #939393;
-        font-size: 11px;
-        overflow: hidden;
-        white-space: nowrap;
         text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 11px;
         opacity: 1;
     }
 }
 
 .btngroup {
+    overflow: hidden;
     margin: 0 2.95% 15px;
     padding-bottom: 15px;
     border-bottom: 1px solid #e7e8ec;
     line-height: 1.5;
-    overflow: hidden;
+
     .vk_like,
     .vk_btn {
         margin-top: 10px;
@@ -291,48 +295,48 @@ a {
 
 .channel {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin: 0 2.95% 15px;
 }
 
 .vk_like {
-    padding: 7px 16px 8px;
-    margin: 0;
-    font-size: 12.5px;
     display: inline-block;
     float: left;
-    zoom: 1;
-    cursor: pointer;
-    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 7px 16px 8px;
     outline: none;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
-    vertical-align: top;
-    line-height: 15px;
-    text-align: center;
-    text-decoration: none;
+    border: 0;
+    border-radius: 2px;
     background: none;
     background-color: #5e81a8;
     color: #fff;
-    border: 0;
-    border-radius: 2px;
-    box-sizing: border-box;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 12.5px;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+    line-height: 15px;
+    cursor: pointer;
+    zoom: 1;
 }
 
 .like_icon {
     display: inline-block;
-    background: url(../images/video_actions.png) no-repeat 0 0;
     float: left;
-    height: 10px;
-    width: 13px;
     margin: 3px 8px 0 3px;
+    width: 13px;
+    height: 10px;
+    background: url(../images/video_actions.png) no-repeat 0 0;
     opacity: 0.4;
     transition: opacity 0.2s ease;
 }
 
 .like_text {
-    float: left;
     display: inline-block;
+    float: left;
 }
 
 .like_views {
@@ -346,30 +350,31 @@ a {
 }
 
 .vk_btn {
-    padding: 7px 16px 8px;
-    margin: 0;
-    font-size: 12.5px;
+    position: relative;
     display: inline-block;
-    zoom: 1;
-    cursor: pointer;
-    white-space: nowrap;
+    float: left;
+    box-sizing: border-box;
+    margin: 0;
+    margin-left: 6px;
+    padding: 7px 16px 8px;
+    padding-right: 8px;
+    padding-left: 8px;
     outline: none;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
-    vertical-align: top;
-    line-height: 15px;
-    text-align: center;
-    text-decoration: none;
-    background: none;
-    background-color: transparent;
     border: 0;
     border-radius: 2px;
-    box-sizing: border-box;
-    position: relative;
-    float: left;
-    margin-left: 6px;
-    padding-left: 8px;
-    padding-right: 8px;
+    background: none;
+    background-color: transparent;
     color: #4a7198;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 12.5px;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+    line-height: 15px;
+    cursor: pointer;
+    zoom: 1;
+
     &:hover,
     &:focus {
         background-color: #e5ebf1;
@@ -381,21 +386,21 @@ a {
     }
     &.dropdown {
         .vk_btn_icon {
-            background: url('../images/dd_arrow.png') no-repeat center;
             margin-left: 10px;
+            background: url('../images/dd_arrow.png') no-repeat center;
         }
     }
 }
 
 .vk_btn_icon {
-    width: 12px;
-    margin-bottom: -2px;
+    position: relative;
     display: inline-block;
     float: left;
-    position: relative;
-    background: url(../images/video_actions.png) no-repeat 0 -44px;
-    height: 13px;
     margin-right: 7px;
+    margin-bottom: -2px;
+    width: 12px;
+    height: 13px;
+    background: url(../images/video_actions.png) no-repeat 0 -44px;
 }
 
 .vk_btn_text {
@@ -408,15 +413,16 @@ a {
 }
 
 .channel_img {
-    height: 50px;
     min-width: 50px;
+    height: 50px;
+
     img {
         position: relative;
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        -moz-force-broken-image-icon: 0;
         background-color: #fafbfc;
+        -moz-force-broken-image-icon: 0;
     }
 }
 
@@ -427,69 +433,70 @@ a {
 }
 
 .channel_name {
+    overflow: hidden;
     color: #2a5885;
     text-decoration: none;
-    cursor: pointer;
-    line-height: 1.25em;
-    font-weight: 700;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
     font-size: 13px;
     font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+    line-height: 1.25em;
+    cursor: pointer;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .channel_date {
     margin-top: 4px;
-    font-size: 12.5px;
     color: #939393;
     white-space: nowrap;
+    font-size: 12.5px;
 }
 
 .flat_btn {
-    padding: 7px 16px 8px;
-    margin: 0;
-    font-size: 12.5px;
     display: inline-block;
-    zoom: 1;
-    cursor: pointer;
-    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 7px 16px 8px;
     outline: none;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
-    vertical-align: top;
-    line-height: 15px;
-    text-align: center;
-    text-decoration: none;
+    border: 0;
+    border-radius: 2px;
     background: none;
     background-color: #5e81a8;
     color: #fff;
-    border: 0;
-    border-radius: 2px;
-    box-sizing: border-box;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 12.5px;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans, Helvetica Neue, sans-serif;
+    line-height: 15px;
+    cursor: pointer;
+    zoom: 1;
 }
 
 .subscribe_btn_count {
-    display: inline-block;
     position: relative;
+    display: inline-block;
     margin-right: 9px;
     padding: 5px 12px 6px;
     border-radius: 2px;
     background: #e5ebf1;
     color: #55677d;
     cursor: default;
+
     &:after {
-        content: " ";
         position: absolute;
-        left: 100%;
         top: 50%;
-        height: 0;
-        width: 0;
+        left: 100%;
         margin-top: -5px;
+        width: 0;
+        height: 0;
         border: 5px solid transparent;
         border-color: transparent;
         border-left-color: #e5ebf1;
+        content: " ";
         pointer-events: none;
     }
 }
@@ -503,21 +510,22 @@ a {
 }
 
 .reply_form {
-    zoom: 1;
     position: relative;
+    margin-top: -1px;
     border-top: 1px solid #e7e8ec;
     border-radius: 0 0 2px 2px;
-    margin-top: -1px;
     background-color: #fff;
+    zoom: 1;
 }
 
 .min-ava {
-    display: block;
-    height: 28px;
     position: absolute;
     top: 10px;
     left: 15px;
     z-index: 1;
+    display: block;
+    height: 28px;
+
     img {
         width: 28px;
         height: 28px;
@@ -526,24 +534,24 @@ a {
 }
 
 .reply_form_text {
-    vertical-align: top;
     overflow: hidden;
-    width: 100%;
+    padding: 14px 20px 16px 12px;
+    padding-left: 55px;
     min-height: 48px;
     max-height: 48px;
-    padding: 14px 20px 16px 12px;
+    width: 100%;
     border: 0;
     border-radius: 2px;
-    line-height: 1.462;
+    vertical-align: top;
     word-wrap: break-word;
+    line-height: 1.462;
     resize: none;
-    padding-left: 55px;
 }
 
 .top_controls_wrap {
     position: absolute;
-    z-index: 2;
     right: -5.3%;
+    z-index: 2;
     width: 5%;
 }
 
@@ -554,6 +562,7 @@ a {
     filter: alpha(opacity=40);
     cursor: pointer;
     transition: opacity 0.15s ease-in-out;
+
     &:hover,
     &:focus {
         opacity: 1;
@@ -563,39 +572,40 @@ a {
 .icon_close,
 .icon_minimize,
 .icon_sideblock {
-    background: url(../images/video_icon.png) no-repeat;
     width: 100%;
+    background: url(../images/video_icon.png) no-repeat;
 }
 
 .icon_close {
-    background-position: 0px 0px;
     height: 20px;
+    background-position: 0px 0px;
 }
 
 .icon_minimize {
-    background-position: 0px -24px;
-    height: 5px;
     margin: 7px 0;
+    height: 5px;
+    background-position: 0px -24px;
 }
 
 .icon_sideblock {
-    background-position: 0 -52px;
     height: 19px;
+    background-position: 0 -52px;
 }
 
 .control_prev,
 .control_next {
     position: absolute;
-    width: 5%;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    max-height: 405px;
+    width: 5%;
+    height: 100%;
     opacity: 0.3;
     filter: alpha(opacity=30);
     cursor: pointer;
     transition: opacity 100ms linear;
-    display: flex;
-    align-items: center;
-    max-height: 405px;
-    height: 100%;
+
     &:hover,
     &:focus {
         opacity: 1;
@@ -612,8 +622,8 @@ a {
 
 .icon_next,
 .icon_prev {
-    height: 30px;
     width: 100%;
+    height: 30px;
     background: url(../images/layer_controls.png) no-repeat;
 }
 
