@@ -1,15 +1,16 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     jade = require('gulp-jade'),
-    browserSync = require('browser-sync').create(),
-    browserify = require('gulp-browserify'),
-    concat = require('gulp-concat'),
-    spritesmith = require('gulp.spritesmith'),
-    imagemin = require('gulp-imagemin'),
-    postcss = require('gulp-postcss'),
-    autoprefixer = require('autoprefixer'),
-    cssnano = require('cssnano'),
-    watch = require('gulp-watch');
+    browserSync =   require('browser-sync').create(),
+    browserify =    require('gulp-browserify'),
+    concat =        require('gulp-concat'),
+    spritesmith =   require('gulp.spritesmith'),
+    imagemin =      require('gulp-imagemin'),
+    postcss =       require('gulp-postcss'),
+    autoprefixer =  require('autoprefixer'),
+    cssnano =       require('cssnano'),
+    watch =         require('gulp-watch'),
+    sourcemaps =    require('gulp-sourcemaps')
 
 // Пути до файлов
 var path = {
@@ -37,6 +38,8 @@ var path = {
     }
 };
 
+var bower_path = './assets/vendor/';
+
 // корневая папка сервера
 var serverDir = './build';
 
@@ -58,8 +61,12 @@ gulp.task('styles', function() {
         cssnano(),
     ];
     return gulp.src(path.assets.styles + 'app.scss')
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.init())
+        .pipe(sass({
+            includePaths: [bower_path + 'breakpoint-sass/stylesheets']
+        }).on('error', sass.logError))
         .pipe(postcss(processors))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.styles))
         .pipe(browserSync.stream()); // перезагрузка сервера
 });
@@ -70,8 +77,10 @@ gulp.task('scripts', function() {
             './assets/vendor/jquery/dist/jquery.js',
             path.assets.scripts + '**/*.js'
         ])
+        .pipe(sourcemaps.init())
         // .pipe(browserify())
         .pipe(concat('app.js'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(path.build.scripts))
         .pipe(browserSync.stream()); // перезагрузка сервера
 });
@@ -103,7 +112,7 @@ gulp.task("sprite", function() {
 
 // Картинки
 gulp.task('images', function() {
-    return gulp.src([path.assets.images + '**/*'])
+    return gulp.src([path.assets.images + '**/*'], ['*.png', '*.jpg', '*.svg', '*.gif'])
         .pipe(imagemin())
         .pipe(gulp.dest(path.build.images))
 });

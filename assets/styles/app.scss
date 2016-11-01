@@ -1,4 +1,8 @@
-@import "../vendor/normalize-scss/sass/_normalize.scss";
+$vendor: "../vendor/";
+
+@import url("#{$vendor}normalize-scss/sass/_normalize.scss");
+$breakpoint-to-ems:	true;
+@import "breakpoint";
 // @import "../vendor/fonts-awesome-sass/assets/stylesheets/_font-awesome.scss";
 @import "var";
 @import "fonts";
