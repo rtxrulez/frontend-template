@@ -8,31 +8,32 @@ var gulp = require('gulp'),
     imagemin = require('gulp-imagemin'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
-    cssnano = require('cssnano');
+    cssnano = require('cssnano'),
+    watch = require('gulp-watch');
 
 // Пути до файлов
 var path = {
     assets: {
-        'styles': './assets/styles/',
-        'templates': './assets/templates/',
-        'scripts': './assets/js/',
-        'images': './assets/img/',
-        'fonts': './assets/fonts/',
-        'vendor': './assets/vendor'
+        'styles':       './assets/styles/',
+        'templates':    './assets/templates/',
+        'scripts':      './assets/js/',
+        'images':       './assets/images/',
+        'fonts':        './assets/fonts/',
+        'vendor':       './assets/vendor'
     },
     build: {
-        'styles': './build/styles',
-        'templates': './build',
-        'scripts': './build/js',
-        'images': './build/img',
-        'fonts': './build/fonts'
+        'styles':       './build/styles',
+        'templates':    './build',
+        'scripts':      './build/js',
+        'images':       './build/images',
+        'fonts':        './build/fonts'
     },
     watch: {
-        'styles': './build/styles/**/*.scss',
-        'templates': './build/templates/**/*.jade',
-        'scripts': './build/js/**/*.js',
-        'images': './build/img/**/*',
-        'fonts': './build/fonts/**/*'
+        'styles':       './assets/styles/**/*.scss',
+        'templates':    './assets/templates/**/*',
+        'scripts':      './assets/js/**/*.js',
+        'images':       './assets/images/**/*',
+        'fonts':        './assets/fonts/**/*'
     }
 };
 
@@ -52,7 +53,7 @@ gulp.task('templates', function() {
 
 // Обработка styles
 gulp.task('styles', function() {
-    var processors = [// ставим префиксы и сжимаем файл
+    var processors = [ // ставим префиксы и сжимаем файл
         autoprefixer({ browsers: ['last 3 version'] }),
         cssnano(),
     ];
@@ -66,8 +67,9 @@ gulp.task('styles', function() {
 // Обработка скриптов
 gulp.task('scripts', function() {
     gulp.src([
-        './assets/vendor/jquery/dist/jquery.js',
-        path.assets.scripts + '**/*.js'])
+            './assets/vendor/jquery/dist/jquery.js',
+            path.assets.scripts + '**/*.js'
+        ])
         // .pipe(browserify())
         .pipe(concat('app.js'))
         .pipe(gulp.dest(path.build.scripts))
@@ -107,14 +109,37 @@ gulp.task('images', function() {
 });
 
 // Сервер
-gulp.task('serve', ['styles'], function() {
+gulp.task('serv', function() {
+    //запускаем вотчер для отслеживания файлов
+    gulp.run('watch');
+
+    // запускаем сервер 
     browserSync.init({
-        server: serverDir
+        server: serverDir // корневой каталог сервака 
     });
-    gulp.watch(path.watch.scripts, ['scripts']);
-    gulp.watch(path.watch.styles, ['styles']);
-    gulp.watch(path.watch.templates, ['templates'])
-    gulp.watch(path.watch.images, ['images', 'sprite'])
+});
+
+// Слежка над измененными файлами
+gulp.task('watch', function() {
+    // Предварительно все собираем
+    gulp.run('default');
+
+    watch(path.watch.styles, function() {
+        gulp.run('styles');
+    });
+
+    watch(path.watch.templates, function() {
+        gulp.run('templates');
+    });
+
+    watch(path.watch.scripts, function() {
+        gulp.run('scripts');
+    });
+
+    watch(path.watch.images, function() {
+        gulp.run('images');
+        gulp.run('sprite');
+    });
 });
 
 // задачи по умолчанию

@@ -4,13 +4,10 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "install": "bower i"
   },
   "author": "",
   "license": "ISC",
-  "scripts": {
-    "install": "bower i"
-  },
   "dependencies": {
     "autoprefixer": "^6.3.6",
     "bower": "^1.7.9",
@@ -25,5 +22,8 @@
     "gulp-sass": "^2.3.1",
     "gulp-scss": "^1.3.17",
     "gulp.spritesmith": "^6.2.1"
+  },
+  "devDependencies": {
+    "gulp-watch": "^4.3.10"
   }
 }
