@@ -1,0 +1,26 @@
+include ../menu/menu
+header.header#header
+  .header__sub
+    .container
+      .headermenu
+        a.headermenu__link(href="") На основной сайт Beeline
+      .subcontrol
+        .search
+          input.search__input.form-control(type="text")
+          button.search__btn
+            span
+        .lang
+          a.lang__link(href="") KGZ
+          a.lang__link.lang__link--active(href="") РУС
+  .header__main
+    .container
+      .logo
+        img.logo__link.img-responsive(src="/img/logo.png", title="Beeline")
+        .logo__text Привет+
+      nav.nav
+        +menu()
+      .menulogin
+        a.menulogin__link Войти
+        a.btn.btn--brand(href="") Подключить услугу
+        
+      

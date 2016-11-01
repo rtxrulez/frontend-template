@@ -1,0 +1,74 @@
+html
+
+    include partials/head.jade
+    include videoplay/videoplay
+    body
+        main.main.bgblack
+            .player_window
+                .player_content
+                    .top_controls_wrap
+                        .control_btn
+                            .icon_close
+                        .control_btn
+                            .icon_minimize
+                        .control_btn
+                            .icon_sideblock
+                    .control_prev
+                        .icon_prev
+                    .control_next
+                        .icon_next
+                    .video_block
+                        .video_container
+                            iframe(
+                            src='https://www.youtube.com/embed/rNpI8XjFepw',
+                            frameborder='0',
+                            allowfullscreen='allowfullscreen')
+                        .video_list
+                            .video_head_one Мои видеозаписи
+                            .playlist
+                                each item in videoplaylist
+                                    +videoplay(item.name, item.url, item.img, item.views, item.time, item.active)
+                    .infoblock
+                        .infoleft
+                            .infohead
+                                .infovideoname SpaceX - Наша Судьба — Стремиться Ввысь !
+                                .infovideoviews 2 612 просмотров
+                            .btngroup
+                                button.vk_like
+                                    .like_icon
+                                    .like_text Мне нравится
+                                    .like_views 234
+                                button.vk_btn
+                                    .vk_btn_icon
+                                    .vk_btn_text Поделиться
+                                button.vk_btn.add_video
+                                    .vk_btn_icon
+                                    .vk_btn_text Добавить себе
+                                .vk_btn.dropdown
+                                    .vk_btn_text Еще
+                                    .vk_btn_icon
+                            .channelgroup
+                                .channel
+                                    a.channel_info
+                                        .channel_img
+                                            img.img-responsive(src="img/docs.jpg")
+                                        .channel_content
+                                            .channel_name Документалки
+                                            .channel_date 17 янв 2016 в 18:06
+                                    .channel_btngroup
+                                        .subscribe_btn_count 58k
+                                        .flat_btn Поделиться
+                                .channel_text.mv_desc
+                                    | Изменение свойств материалов или создание новых? Нанотехнологии - что это такое и на что они способны? <<Нанореволюция. Добро пожаловать в город будущего>> (The Nano Revolution: Welcome to Nano City, 2011) -- научно-популярный фильм, который расскажет о потенциале и сферах их применения.
+                            .reply_form
+                                a.min-ava(href="#")
+                                    img.img-responsive(src="img/ava.jpg")
+                                textarea.reply_form_text(placeholder="Написать комментарий...")
+                        .inforight
+                            .inforight_title Другое видео
+                            .inforight_playlist
+                                each item in othervideolist
+                                    +videoplay(item.name, item.url, item.img, item.views, item.time)
+
+ 
+        include partials/footer.jade

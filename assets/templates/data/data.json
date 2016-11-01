@@ -1,0 +1,63 @@
+{
+  "videoplaylist": [
+    {
+      "name": "Олег Фея — Все, что тебя касается",
+      "url": "#",
+      "img": "videoplay.jpg",
+      "views": "286 просмотров",
+      "time": "35:49"
+    },
+    {
+      "name": "Бобрёнок моется",
+      "url": "#",
+      "img": "videoplay1.jpg",
+      "views": "77 000 просмотров",
+      "time": "0.21"
+    },
+    {
+      "name": "SpaceX - Наша Судьба — Стремиться Ввысь !",
+      "url": "https://new.vk.com/video?z=video-51873373_171567799%2Fpl_cat_updates",
+      "img": "videoplay2.jpg",
+      "views": "286 просмотров",
+      "time": "2:49",
+      "active": true
+    },
+    {
+      "name": "Илон Маск смешные момнты ч2 (На русском)",
+      "url": "https://new.vk.com/video?z=video-51873373_456239126%2Fpl_cat_updates",
+      "img": "videoplay3.jpg",
+      "views": "2860 просмотров",
+      "time": "7:08"
+    }
+  ],
+  "othervideolist": [
+    {
+      "name": "Олег Фея — Все, что тебя касается",
+      "url": "#",
+      "img": "videoplay.jpg",
+      "views": "286 просмотров",
+      "time": "35:49"
+    },
+    {
+      "name": "Бобрёнок моется",
+      "url": "#",
+      "img": "videoplay1.jpg",
+      "views": "77 000 просмотров",
+      "time": "0.21"
+    },
+    {
+      "name": "SpaceX - Наша Судьба — Стремиться Ввысь !",
+      "url": "https://new.vk.com/video?z=video-51873373_171567799%2Fpl_cat_updates",
+      "img": "videoplay2.jpg",
+      "views": "286 просмотров",
+      "time": "2:49"
+    },
+    {
+      "name": "Илон Маск смешные момнты ч2 (На русском)",
+      "url": "https://new.vk.com/video?z=video-51873373_456239126%2Fpl_cat_updates",
+      "img": "videoplay3.jpg",
+      "views": "2860 просмотров",
+      "time": "7:08"
+    }
+  ]
+}

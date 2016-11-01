@@ -1,0 +1,23 @@
+
+@font-face {
+  font-family: 'OfficinaSerifC-Bold';
+  src: url($font-path+'OfficinaSerifC-Bold.eot?#iefix') format('embedded-opentype'),
+      url($font-path+'OfficinaSerifC-Bold.otf')  format('opentype'),
+	    url($font-path+'OfficinaSerifC-Bold.woff') format('woff'),
+      url($font-path+'OfficinaSerifC-Bold.ttf')  format('truetype'),
+      url($font-path+'OfficinaSerifC-Bold.svg#OfficinaSerifC-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'OfficinaSerifMediumC';
+  src: url($font-path+'OfficinaSerifMediumC.eot?#iefix') format('embedded-opentype'),
+       url($font-path+'OfficinaSerifMediumC.otf')  format('opentype'),
+	     url($font-path+'OfficinaSerifMediumC.woff') format('woff'),
+       url($font-path+'OfficinaSerifMediumC.ttf')  format('truetype'),
+       url($font-path+'OfficinaSerifMediumC.svg#OfficinaSerifMediumC') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

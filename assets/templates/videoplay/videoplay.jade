@@ -1,0 +1,7 @@
+mixin videoplay(name, url, img, views, time, active)
+    a.videoplay(href=url, class=typeof active === "undefined" ? "" : "active")
+        .videoplay_img(style="background-image: url('img/"+img+"')")
+            .videoplay_duration= time
+        .videoplay_content
+            .videoplay_title= name
+            .videoplay_views= views
