@@ -1,7 +1,7 @@
 $vendor: "../vendor/";
 
 @import url("#{$vendor}normalize-scss/sass/_normalize.scss");
-$breakpoint-to-ems:	true;
+@import url("#{$vendor}fukol-grids/fukol.css");
 @import "breakpoint";
 // @import "../vendor/fonts-awesome-sass/assets/stylesheets/_font-awesome.scss";
 @import "var";
